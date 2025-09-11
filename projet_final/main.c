@@ -75,12 +75,23 @@ void affichejoueur(){
             }
         }
 
-            }
+            }printf("\n=== Liste des joueurs ===\n");
+    for (int i = 0; i < nbjoueurs; i++) {
+        printf("%d. Nom: %s | Prénom: %s | Maillot: %d | Poste: %s | Âge: %d | Buts: %d ",
+               joueurs[i].id,
+               joueurs[i].nom,
+               joueurs[i].prenom,
+               joueurs[i].numeroMaillot,
+               joueurs[i].poste,
+               joueurs[i].age,
+               joueurs[i].buts);
+
+    }
 
     }else if (choixTri==2){
   struct joueur temp;
     for ( i = 0; i < nbjoueurs - 1; i++) {
-        for (int j = 0; j < nbjoueurs - 1 - i; j++) {
+        for (int j = 0; j < nbjoueurs - i - 1; j++) {
             if (joueurs[j].age > joueurs[j + 1].age) {
                 // échanger les joueurs
                 temp = joueurs[j];
@@ -88,11 +99,21 @@ void affichejoueur(){
                 joueurs[j + 1] = temp;
         }
     }
-        }
-    }else if(choixTri==3){
-
+        }  printf("\n=== Liste des joueurs ===\n");
+    for (int i = 0; i < nbjoueurs; i++) {
+        printf("%d. Nom: %s | Prenom: %s | Maillot: %d | Poste: %s | age: %d | Buts: %d | Date: %s | Statut: %s\n",
+               joueurs[i].id,
+               joueurs[i].nom,
+               joueurs[i].prenom,
+               joueurs[i].numeroMaillot,
+               joueurs[i].poste,
+               joueurs[i].age,
+               joueurs[i].buts);
 
     }
+}
+    //}else if(choixTri==3){
+
     }while(choixTri < 1 || choixTri > 3 );
 }
 
@@ -131,7 +152,7 @@ void modifjoueur(){
                     strcpy(joueurs[i].poste, "Gardien");
                     break;
                 case 2:
-                    strcpy(joueurs[i].poste, "Défenseur");
+                    strcpy(joueurs[i].poste, "Defenseur");
                     break;
                 case 3:
                     strcpy(joueurs[i].poste, "Milieu");
