@@ -28,7 +28,7 @@ struct joueur joueurs[900]={ //10 enregistrement
     {9, "Courtois", "Thibaut", 1, "gardient", 31, 0, "titulaire"},
     {10, "Pogba", "Paul", 6, "milieu", 29, 10, "titulaire"}
 };
-// Ajouter un joueur
+
  void ajoutjoueur(){
     int a,i;
     printf("combien de joueur tu veux ajouter? ");
@@ -100,7 +100,7 @@ void affichejoueur(){
          printf("-------------------------------------------------------------------------------\n");
         struct joueur temp;
              for ( int i = 0; i < nbjoueurs - 1; i++) {
-                 for (int j = 0; j < nbjoueurs - 1 - i; j++) {
+                 for (int j = 0; j < nbjoueurs - i - 1; j++) {
                      if (strcmp(joueurs[j].nom, joueurs[j + 1].nom) > 0) {
                          temp = joueurs[j];
                          joueurs[j] = joueurs[j + 1];
@@ -148,7 +148,7 @@ void affichejoueur(){
            joueurs[i].status);
 
     }
-    //affichage par tri de poste
+
     }else if(choixTri==3){
     char postes[4][20] = {"gardient", "defenseur", "milieu", "attaquant"};
     for (int p = 0; p < 4; p++) {
@@ -432,6 +432,10 @@ int main()
         printf("7 - Quitter\n");
         printf("Votre choix: ");
         scanf("%d", &choix);
+
+
+
+
 
         switch (choix)
         {
